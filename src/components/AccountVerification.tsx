@@ -11,7 +11,7 @@ const AccountVerification = () => {
   const navigate = useNavigate();
   const { toast } = useToast();
   const [formData, setFormData] = useState({
-    fullName: "John Doe", // Auto-filled example
+    fullName: "Tlhalefang Ntshilane", // Auto-filled example
     dateOfBirth: "",
     idNumber: "",
     placeOfBirth: "",
