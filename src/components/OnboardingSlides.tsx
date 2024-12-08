@@ -46,26 +46,34 @@ const OnboardingSlides = () => {
   return (
     <div className="min-h-screen flex flex-col items-center justify-center bg-background p-4">
       <div className="w-full max-w-md">
-        <div className="relative overflow-hidden rounded-lg shadow-xl">
+        <div className="relative overflow-hidden rounded-lg shadow-xl animate-fade-in">
           <img
             src={slides[currentSlide].image}
             alt={slides[currentSlide].title}
-            className="w-full h-64 object-cover"
+            className="w-full h-64 object-cover transition-opacity duration-300"
           />
-          <div className="absolute inset-0 bg-black/40" />
-          <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
-            <h2 className="text-2xl font-bold mb-2">{slides[currentSlide].title}</h2>
-            <p className="text-sm opacity-90">{slides[currentSlide].description}</p>
+          <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
+          <div className="absolute bottom-0 left-0 right-0 p-6 text-white transform transition-all duration-300">
+            <h2 className="text-2xl font-bold mb-2 animate-fade-in">{slides[currentSlide].title}</h2>
+            <p className="text-sm opacity-90 animate-fade-in">{slides[currentSlide].description}</p>
           </div>
         </div>
 
-        <div className="mt-8 flex items-center justify-between">
+        <div className="mt-8 flex items-center justify-between animate-fade-in">
           {currentSlide > 0 ? (
-            <Button variant="outline" onClick={prevSlide}>
+            <Button 
+              variant="outline" 
+              onClick={prevSlide}
+              className="transition-all duration-300 hover:scale-105"
+            >
               <ChevronLeft className="mr-2 h-4 w-4" /> Previous
             </Button>
           ) : (
-            <Button variant="outline" onClick={skip}>
+            <Button 
+              variant="outline" 
+              onClick={skip}
+              className="transition-all duration-300 hover:scale-105"
+            >
               Skip
             </Button>
           )}
@@ -73,13 +81,16 @@ const OnboardingSlides = () => {
             {slides.map((_, index) => (
               <div
                 key={index}
-                className={`h-2 w-2 rounded-full ${
-                  currentSlide === index ? 'bg-primary' : 'bg-gray-300'
+                className={`h-2 w-2 rounded-full transition-all duration-300 ${
+                  currentSlide === index ? 'bg-primary scale-125' : 'bg-gray-300'
                 }`}
               />
             ))}
           </div>
-          <Button onClick={nextSlide}>
+          <Button 
+            onClick={nextSlide}
+            className="bg-gradient-to-r from-purple-600 to-blue-500 hover:from-purple-700 hover:to-blue-600 transition-all duration-300 hover:scale-105"
+          >
             {currentSlide === slides.length - 1 ? (
               'Get Started'
             ) : (

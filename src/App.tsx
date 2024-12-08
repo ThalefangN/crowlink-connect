@@ -6,6 +6,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import OnboardingSlides from "./components/OnboardingSlides";
 import SignUp from "./components/SignUp";
 import SignIn from "./components/SignIn";
+import OTPVerification from "./components/OTPVerification";
 import ConfirmationScreen from "./components/ConfirmationScreen";
 import VerificationPendingScreen from "./components/VerificationPendingScreen";
 import RestrictedScreen from "./components/RestrictedScreen";
@@ -24,6 +25,7 @@ const App = () => (
           <Route path="/" element={<OnboardingSlides />} />
           <Route path="/signup" element={<SignUp />} />
           <Route path="/signin" element={<SignIn />} />
+          <Route path="/otp-verification" element={<OTPVerification />} />
           <Route path="/confirmation" element={<ConfirmationScreen />} />
           <Route path="/verification-pending" element={<VerificationPendingScreen />} />
           <Route path="/restricted" element={<RestrictedScreen />} />
