@@ -15,10 +15,10 @@ const OTPVerification = () => {
     e.preventDefault();
     if (otp.length === 6) {
       toast({
-        title: "Verification successful",
-        description: "Your account has been verified.",
+        title: "OTP verified",
+        description: "Please complete your account verification.",
       });
-      navigate("/confirmation");
+      navigate("/account-verification");
     }
   };
 
@@ -49,6 +49,7 @@ const OTPVerification = () => {
                     <InputOTPSlot
                       key={index}
                       {...slot}
+                      index={index}
                       className="transition-all duration-300 hover:border-primary focus:border-primary"
                     />
                   ))}
